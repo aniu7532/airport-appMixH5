@@ -1,0 +1,4 @@
+include ':plugin-app'
+include ':sample-runtime'
+include ':sample-loader'
+include ':sample-host-lib'
