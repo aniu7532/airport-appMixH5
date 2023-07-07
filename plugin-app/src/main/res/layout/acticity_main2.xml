@@ -10,7 +10,9 @@
        android:textColor="#000000"
        android:layout_centerHorizontal="true"
        android:textSize="20sp"
-       android:text="我是插件1" />
+       android:text="作业接收" />
+
+
 
    <LinearLayout
        android:layout_width="wrap_content"
