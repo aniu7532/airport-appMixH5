@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,6 +18,8 @@ public class MainActivity1 extends AppCompatActivity implements View.OnClickList
 
     private TextView tv_submit;
     private TextView tv_title;
+
+    private EditText edt1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,8 @@ public class MainActivity1 extends AppCompatActivity implements View.OnClickList
 
         tv_title = findViewById(R.id.tv_title);
         tv_title.setText("违章上报");
+
+        edt1 = findViewById(R.id.edt1);
     }
 
     @Override
@@ -48,7 +53,7 @@ public class MainActivity1 extends AppCompatActivity implements View.OnClickList
                 startActivity(new Intent(MainActivity1.this, MainActivity2.class));
                 break;
             case R.id.tv_submit:
-                Toast.makeText(this, "违章上报成功", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, edt1.getText().toString().concat("上报成功"), Toast.LENGTH_SHORT).show();
                 break;
             default:
                 break;
