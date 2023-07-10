@@ -9,8 +9,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.tencent.shadow.sample.host.lib.HostAddPluginViewContainer;
-import com.tencent.shadow.sample.host.lib.HostAddPluginViewContainerHolder;
+import com.caet.shadow.sample.host.lib.HostAddPluginViewContainer;
+import com.caet.shadow.sample.host.lib.HostAddPluginViewContainerHolder;
 
 public class HostAddPluginViewService  extends IntentService {
 
