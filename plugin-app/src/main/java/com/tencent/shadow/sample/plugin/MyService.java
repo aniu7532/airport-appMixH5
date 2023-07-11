@@ -7,6 +7,7 @@ import android.os.RemoteException;
 import android.util.Log;
 
 public class MyService extends Service {
+
     public MyService() {
     }
 
@@ -14,6 +15,13 @@ public class MyService extends Service {
     public void onCreate() {
         super.onCreate();
         Log.d(C.logTag,"----------------插件1_Service_onCreate");
+    }
+
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        Log.d(C.logTag,"----------------插件1_Service_onStartCommand");
+        return super.onStartCommand(intent, flags, startId);
+
     }
 
     @Override

@@ -26,6 +26,13 @@
 
         <service android:name="com.tencent.shadow.sample.plugin.HostAddPluginViewService" />
 
+        <!--dynamic activity注册 end -->
+        <receiver android:name="com.tencent.shadow.sample.plugin.MyReceiver">
+            <intent-filter>
+                <action android:name="com.plugin_one.user" />
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>
