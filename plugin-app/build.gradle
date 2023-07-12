@@ -84,8 +84,8 @@ shadow {
     packagePlugin {
         pluginTypes {
             debug {
-                loaderApkConfig = new Tuple2('sample-loader-debug.apk', ':sample-loader:assembleDebug')
-                runtimeApkConfig = new Tuple2('sample-runtime-debug.apk', ':sample-runtime:assembleDebug')
+                loaderApkConfig = new Tuple2('caet-loader-debug.apk', ':caet-loader:assembleDebug')
+                runtimeApkConfig = new Tuple2('caet-runtime-debug.apk', ':caet-runtime:assembleDebug')
                 pluginApks {
                     pluginApk1 {
                         businessName = 'sample-plugin'//businessName相同的插件，context获取的Dir是相同的。businessName留空，表示和宿主相同业务，直接使用宿主的Dir。
@@ -99,11 +99,11 @@ shadow {
             }
 
             release {
-                loaderApkConfig = new Tuple2('sample-loader-release.apk', ':sample-loader:assembleRelease')
-                runtimeApkConfig = new Tuple2('sample-runtime-release.apk', ':sample-runtime:assembleRelease')
+                loaderApkConfig = new Tuple2('caet-loader-release.apk', ':caet-loader:assembleRelease')
+                runtimeApkConfig = new Tuple2('caet-runtime-release.apk', ':caet-runtime:assembleRelease')
                 pluginApks {
                     pluginApk1 {
-                        businessName = 'demo'
+                        businessName = 'sample-plugin'
                         partKey = 'sample-plugin'
                         buildTask = 'assemblePluginRelease'
                         apkName = 'plugin-app-plugin-release.apk'
@@ -114,9 +114,9 @@ shadow {
             }
         }
 
-        loaderApkProjectPath = 'sample-loader'
+        loaderApkProjectPath = 'caet-loader'
 
-        runtimeApkProjectPath = 'sample-runtime'
+        runtimeApkProjectPath = 'caet-runtime'
 
         version = 4
         compactVersion = [1, 2, 3]
