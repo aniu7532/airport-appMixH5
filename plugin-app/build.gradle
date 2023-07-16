@@ -40,8 +40,16 @@ dependencies {
     //pluginCompileOnly "com.tencent.shadow.core:runtime:$shadow_version"
     pluginCompileOnly "com.tencent.shadow.core:runtime:2.2.1"
     //注意sample-host-lib要用compileOnly编译而不打包在插件中。在packagePlugin任务中配置hostWhiteList允许插件访问宿主的类。
-    pluginCompileOnly project(":sample-host-lib")
-    normalImplementation project(":sample-host-lib")
+    pluginCompileOnly project(':caet-host-lib')
+    normalImplementation project(':caet-host-lib')
+
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
 }
 
 //这段buildscript配置的dependencies是为了apply plugin: 'com.tencent.shadow.plugin'能找到实现
@@ -76,8 +84,8 @@ shadow {
     packagePlugin {
         pluginTypes {
             debug {
-                loaderApkConfig = new Tuple2('sample-loader-debug.apk', ':sample-loader:assembleDebug')
-                runtimeApkConfig = new Tuple2('sample-runtime-debug.apk', ':sample-runtime:assembleDebug')
+                loaderApkConfig = new Tuple2('caet-loader-debug.apk', ':caet-loader:assembleDebug')
+                runtimeApkConfig = new Tuple2('caet-runtime-debug.apk', ':caet-runtime:assembleDebug')
                 pluginApks {
                     pluginApk1 {
                         businessName = 'sample-plugin'//businessName相同的插件，context获取的Dir是相同的。businessName留空，表示和宿主相同业务，直接使用宿主的Dir。
@@ -85,30 +93,30 @@ shadow {
                         buildTask = 'assemblePluginDebug'
                         apkName = 'plugin-app-plugin-debug.apk'
                         apkPath = 'plugin-app/build/outputs/apk/plugin/debug/plugin-app-plugin-debug.apk'
-                        hostWhiteList = ["com.tencent.shadow.sample.host.lib"]
+                        hostWhiteList = ["com.caet.shadow.sample.host.lib"]
                     }
                 }
             }
 
             release {
-                loaderApkConfig = new Tuple2('sample-loader-release.apk', ':sample-loader:assembleRelease')
-                runtimeApkConfig = new Tuple2('sample-runtime-release.apk', ':sample-runtime:assembleRelease')
+                loaderApkConfig = new Tuple2('caet-loader-release.apk', ':caet-loader:assembleRelease')
+                runtimeApkConfig = new Tuple2('caet-runtime-release.apk', ':caet-runtime:assembleRelease')
                 pluginApks {
                     pluginApk1 {
-                        businessName = 'demo'
+                        businessName = 'sample-plugin'
                         partKey = 'sample-plugin'
                         buildTask = 'assemblePluginRelease'
                         apkName = 'plugin-app-plugin-release.apk'
                         apkPath = 'plugin-app/build/outputs/apk/plugin/release/plugin-app-plugin-release.apk'
-                        hostWhiteList = ["com.tencent.shadow.sample.host.lib"]
+                        hostWhiteList = ["com.caet.shadow.sample.host.lib"]
                     }
                 }
             }
         }
 
-        loaderApkProjectPath = 'sample-loader'
+        loaderApkProjectPath = 'caet-loader'
 
-        runtimeApkProjectPath = 'sample-runtime'
+        runtimeApkProjectPath = 'caet-runtime'
 
         version = 4
         compactVersion = [1, 2, 3]

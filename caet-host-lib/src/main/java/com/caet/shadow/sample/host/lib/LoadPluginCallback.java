@@ -1,4 +1,4 @@
-package com.tencent.shadow.sample.host.lib;
+package com.caet.shadow.sample.host.lib;
 
 import android.content.pm.ApplicationInfo;
 import android.content.res.Resources;

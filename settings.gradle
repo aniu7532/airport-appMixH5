@@ -1,4 +1,4 @@
 include ':plugin-app'
-include ':sample-runtime'
-include ':sample-loader'
-include ':sample-host-lib'
+include ':caet-runtime'
+include ':caet-loader'
+include ':caet-host-lib'
