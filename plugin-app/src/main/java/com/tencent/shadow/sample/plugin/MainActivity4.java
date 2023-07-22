@@ -21,8 +21,8 @@ public class MainActivity4 extends Activity {
         HostUiLayerProvider hostUiLayerProvider = HostUiLayerProvider.getInstance();
         View hostUiLayer = hostUiLayerProvider.buildHostUiLayer();
 
-        UserInfoBean userInfoBean=hostUiLayerProvider.getUserInfo();
-        Toast.makeText(this,userInfoBean.getIcon(),Toast.LENGTH_SHORT).show();
+        UserInfoBean userInfoBean = hostUiLayerProvider.getUserInfo();
+        Toast.makeText(this, userInfoBean.getDepid(), Toast.LENGTH_SHORT).show();
 
         linearLayout.addView(hostUiLayer);
 
