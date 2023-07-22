@@ -20,12 +20,14 @@ public class MainActivity2 extends Activity {
         Intent intent = getIntent();
 
         try {
-            String canshu1 = intent.getStringExtra("canshu1");
-            String canshu2 = intent.getStringExtra("canshu2");
-            String canshu3 = intent.getStringExtra("canshu3");
-            tv_canshu_info.setText("canshu1：".concat(canshu1)
-                    .concat("\n").concat("canshu2：").concat(canshu2)
-                    .concat("\n").concat("canshu3").concat(canshu3));
+            String id = intent.getStringExtra("id");
+            String name = intent.getStringExtra("name");
+            String depid = intent.getStringExtra("depid");
+            String token = intent.getStringExtra("token");
+            tv_canshu_info.setText("id：".concat(id)
+                    .concat("\n").concat("name：").concat(name)
+                    .concat("\n").concat("depid：").concat(depid)
+                    .concat("\n").concat("token").concat(token));
         }catch (Exception e){
             Toast.makeText(MainActivity2.this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
