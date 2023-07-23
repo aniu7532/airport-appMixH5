@@ -16,7 +16,7 @@
         android:layout_height="44dp"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:text="SHADOW"
+        android:text="AOMS"
         android:textStyle="bold"
         android:textColor="#333333"
         android:textSize="16sp" />
