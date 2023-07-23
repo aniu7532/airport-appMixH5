@@ -7,20 +7,73 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity1">
 
-
     <include layout="@layout/app_bar"/>
 
-   <EditText
-       android:id="@+id/edt1"
-       android:layout_width="match_parent"
-       android:textSize="14sp"
-       android:textColor="#000000"
-       android:layout_margin="12dp"
-       android:hint="请输入内容"
-       android:padding="12dp"
-       android:textColorHint="#CCCCCC"
-       android:background="#FFFFFF"
-       android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:id="@+id/lb_personal_name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:text="姓名："
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/edt1"
+            android:layout_width="match_parent"
+            android:textSize="14sp"
+            android:textColor="#000000"
+            android:layout_margin="12dp"
+            android:hint="请输入上报人"
+            android:padding="12dp"
+            android:textColorHint="#CCCCCC"
+            android:background="#FFFFFF"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/lb_personal_content"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:text="内容："
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/report_content"
+            android:layout_width="match_parent"
+            android:textSize="14sp"
+            android:textColor="#000000"
+            android:layout_margin="12dp"
+            android:hint="请输入上报内容"
+            android:padding="12dp"
+            android:textColorHint="#CCCCCC"
+            android:background="#FFFFFF"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
 
     <TextView
         android:id="@+id/tv_submit"
