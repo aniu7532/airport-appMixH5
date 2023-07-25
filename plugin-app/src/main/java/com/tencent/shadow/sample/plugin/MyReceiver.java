@@ -19,6 +19,8 @@ public class MyReceiver extends BroadcastReceiver {
         handler.post(new Runnable() {
             @Override
             public void run() {
+                //String tcpData = intent.getStringExtra("data");
+
                 Toast.makeText(context, "插件接收到清理缓存广播,我是:" + tag, Toast.LENGTH_SHORT).show();
             }
         });
