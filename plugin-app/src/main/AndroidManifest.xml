@@ -27,9 +27,18 @@
         <service android:name="com.tencent.shadow.sample.plugin.HostAddPluginViewService" />
 
         <!--dynamic activity注册 end -->
-        <receiver android:name="com.tencent.shadow.sample.plugin.MyReceiver">
+
+        <!--  宿主发送过来退出登录广播 -->
+        <receiver android:name="com.tencent.shadow.sample.plugin.receiver.HostLogoutReceiver">
             <intent-filter>
-                <action android:name="com.plugin_one.user" />
+                <action android:name="com.host.logout" />
+            </intent-filter>
+        </receiver>
+
+        <!--  宿主发送过来的扫码广播 -->
+        <receiver android:name="com.tencent.shadow.sample.plugin.receiver.HostScanReceiver">
+            <intent-filter>
+                <action android:name="com.host.scan" />
             </intent-filter>
         </receiver>
 

@@ -1,4 +1,4 @@
-package com.tencent.shadow.sample.plugin;
+package com.tencent.shadow.sample.plugin.receiver;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -9,7 +9,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 
-public class MyReceiver extends BroadcastReceiver {
+public class HostLogoutReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -17,9 +17,9 @@ public class MyReceiver extends BroadcastReceiver {
         handler.post(new Runnable() {
             @Override
             public void run() {
-                Toast.makeText(context,"插件1接受到广播",Toast.LENGTH_SHORT).show();
+                 Toast.makeText(context,"plugin1广播事件：退出登录",Toast.LENGTH_SHORT).show();
             }
         });
-        Log.d("TAG","----------------------------插件1接受到广播");
+        Log.d("TAG","----------------------------plugin1广播事件：退出登录");
     }
 }

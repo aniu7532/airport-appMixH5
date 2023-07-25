@@ -54,6 +54,12 @@ public class MainActivity1 extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.tv_submit:
                 Toast.makeText(this, edt1.getText().toString().concat("上报成功"), Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent();
+                intent.setAction("com.host.plugin_msg");
+                intent.putExtra("plugin","plugin1");
+                sendBroadcast(intent);
+
                 break;
             default:
                 break;
