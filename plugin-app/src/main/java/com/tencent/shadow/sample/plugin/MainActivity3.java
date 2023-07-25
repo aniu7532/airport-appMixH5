@@ -18,15 +18,15 @@ public class MainActivity3 extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.acticity_main3);
 
+        UserInfoBean userInfoBean = HostUserInfo.getInstance().getUserInfo();
 
-        UserInfoBean userInfoBean=HostUserInfo.getInstance().getUserInfo();
-
-        tv_user_info=findViewById(R.id.tv_user_info);
-        tv_get_user_info=findViewById(R.id.tv_get_user_info);
+        tv_user_info = findViewById(R.id.tv_user_info);
+        tv_get_user_info = findViewById(R.id.tv_get_user_info);
         tv_get_user_info.setOnClickListener(v -> {
-            tv_user_info.setText("name：".concat(userInfoBean.getName())
-                    .concat("\n").concat("age：").concat(userInfoBean.getIcon())
-                    .concat("\n").concat("sex：").concat(userInfoBean.getToken()));
+            tv_user_info.setText("id：".concat(userInfoBean.getId())
+                    .concat("\n").concat("name：").concat(userInfoBean.getName())
+                    .concat("\n").concat("depid：").concat(userInfoBean.getDepid())
+                    .concat("\n").concat("token：").concat(userInfoBean.getToken()));
         });
 
     }
