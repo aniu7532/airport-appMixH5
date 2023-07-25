@@ -26,6 +26,8 @@
         <activity android:name=".MainActivity5"/>
         <activity android:name=".MainActivity6"/>
 
+        <activity android:name=".TestActivityOrientationActivity"/>
+
         <service android:name="com.tencent.shadow.sample.plugin.HostAddPluginViewService" />
 
         <!--dynamic activity注册 end -->
