@@ -39,7 +39,7 @@ dependencies {
     //如果不以compileOnly方式依赖，会导致其他Transform或者Proguard找不到这些类
     //pluginCompileOnly "com.tencent.shadow.core:runtime:$shadow_version"
     pluginCompileOnly "com.tencent.shadow.core:runtime:2.2.1"
-    //注意sample-host-lib要用compileOnly编译而不打包在插件中。在packagePlugin任务中配置hostWhiteList允许插件访问宿主的类。
+    //注意caet-host-lib要用compileOnly编译而不打包在插件中。在packagePlugin任务中配置hostWhiteList允许插件访问宿主的类。
     pluginCompileOnly project(':caet-host-lib')
     normalImplementation project(':caet-host-lib')
 
@@ -88,8 +88,8 @@ shadow {
                 runtimeApkConfig = new Tuple2('caet-runtime-debug.apk', ':caet-runtime:assembleDebug')
                 pluginApks {
                     pluginApk1 {
-                        businessName = 'sample-plugin'//businessName相同的插件，context获取的Dir是相同的。businessName留空，表示和宿主相同业务，直接使用宿主的Dir。
-                        partKey = 'sample-plugin'
+                        businessName = '0BA60844-6E83-4EED-9D17-6340AAC3C4AB'//businessName相同的插件，context获取的Dir是相同的。businessName留空，表示和宿主相同业务，直接使用宿主的Dir。
+                        partKey = '0BA60844-6E83-4EED-9D17-6340AAC3C4AB'
                         buildTask = 'assemblePluginDebug'
                         apkName = 'plugin-app-plugin-debug.apk'
                         apkPath = 'plugin-app/build/outputs/apk/plugin/debug/plugin-app-plugin-debug.apk'
@@ -103,8 +103,8 @@ shadow {
                 runtimeApkConfig = new Tuple2('caet-runtime-release.apk', ':caet-runtime:assembleRelease')
                 pluginApks {
                     pluginApk1 {
-                        businessName = 'sample-plugin'
-                        partKey = 'sample-plugin'
+                        businessName = '0BA60844-6E83-4EED-9D17-6340AAC3C4AB'
+                        partKey = '0BA60844-6E83-4EED-9D17-6340AAC3C4AB'
                         buildTask = 'assemblePluginRelease'
                         apkName = 'plugin-app-plugin-release.apk'
                         apkPath = 'plugin-app/build/outputs/apk/plugin/release/plugin-app-plugin-release.apk'
