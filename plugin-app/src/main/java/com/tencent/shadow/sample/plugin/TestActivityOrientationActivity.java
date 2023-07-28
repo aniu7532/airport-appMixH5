@@ -10,6 +10,8 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.tencent.shadow.sample.plugin.utils.LogUtils;
+
 public class TestActivityOrientationActivity extends AppCompatActivity {
 
     @Override
@@ -17,11 +19,13 @@ public class TestActivityOrientationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_orientation);
 
-        Intent intent = getIntent();
         try {
-            String orientation = intent.getStringExtra("orientation");
+            Intent intent = getIntent();
+            int orientation = intent.getIntExtra("orientation",-1);
+            setRequestedOrientation(orientation);
         }catch (Exception e){
             Toast.makeText(TestActivityOrientationActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+            LogUtils.logE(e.getMessage());
         }
     }
 

@@ -19,6 +19,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import com.caet.shadow.sample.host.lib.HostCreateNotification;
+
 /**
  * 测试插件发起的通知栏在宿主的运行情况
  */
@@ -26,11 +28,14 @@ public class CreateNotificationActivity extends AppCompatActivity implements Vie
 
     private ImageView img_back;
     private TextView tv_submit;
+    private TextView tv_submit2;
 
     //通知管理者
     private NotificationManager notificationManager;
     private Notification notification;
     private int notificationId = 1;
+
+
 
 
     @Override
@@ -42,6 +47,9 @@ public class CreateNotificationActivity extends AppCompatActivity implements Vie
         img_back.setOnClickListener(this);
         tv_submit=findViewById(R.id.tv_submit);
         tv_submit.setOnClickListener(this);
+        tv_submit2=findViewById(R.id.tv_submit2);
+        tv_submit2.setOnClickListener(this);
+
 
         //发送通知首先要通过通知服务得到通知管理者
         notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
@@ -107,6 +115,9 @@ public class CreateNotificationActivity extends AppCompatActivity implements Vie
                 break;
             case R.id.tv_submit:
                 notificationManager.notify(notificationId, notification);
+                break;
+            case R.id.tv_submit2:
+
                 break;
             default:
                 break;
