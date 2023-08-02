@@ -8,11 +8,11 @@ public class LogUtils {
 
 
     public static void logD(String str) {
-        Log.d(TAG, "----------------------------------------".concat(str));
+        Log.d(TAG, "----------------------------------------[plugin-project]  :  ".concat(str));
     }
 
     public static void logE(String str) {
-        Log.e(TAG, "----------------------------------------".concat(str));
+        Log.e(TAG, "----------------------------------------[plugin-project]  :  ".concat(str));
     }
 
 
