@@ -14,12 +14,12 @@ public class MyService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        Log.d(C.logTag,"----------------插件1_Service_onCreate");
+        LogUtils.logD("插件1_Service_onCreate");
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Log.d(C.logTag,"----------------插件1_Service_onStartCommand");
+        LogUtils.logD("插件1_Service_onStartCommand");
         return super.onStartCommand(intent, flags, startId);
 
     }
@@ -27,11 +27,12 @@ public class MyService extends Service {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Log.d(C.logTag,"----------------插件1_Service_onDestroy");
+        LogUtils.logD("插件1_Service_onDestroy");
     }
 
     @Override
     public IBinder onBind(Intent intent) {
+        LogUtils.logD("插件1_Service_onBind");
         return new IMyAidlInterface.Stub() {
             @Override
             public String basicTypes(int anInt, long aLong, boolean aBoolean, float aFloat, double aDouble, String aString) throws RemoteException {

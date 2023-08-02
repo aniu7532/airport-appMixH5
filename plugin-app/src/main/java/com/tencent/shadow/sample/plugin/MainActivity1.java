@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.tencent.shadow.sample.plugin.utils.LogUtils;
+
 public class MainActivity1 extends AppCompatActivity implements View.OnClickListener {
 
     private Button btnStartActivity;
@@ -26,6 +28,37 @@ public class MainActivity1 extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main1);
         initView();
+        LogUtils.logD("plugin_1_onCreate");
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        LogUtils.logD("plugin_1_onStart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        LogUtils.logD("plugin_1_onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        LogUtils.logD("plugin_1_onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        LogUtils.logD("plugin_1_onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        LogUtils.logD("plugin_1_onDestroy");
     }
 
     private void initView() {

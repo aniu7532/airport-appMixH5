@@ -9,6 +9,7 @@
         android:allowBackup="true"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:name="com.tencent.shadow.sample.plugin.PluginApp"
         android:theme="@style/Theme.AppCompat.NoActionBar"
         >
         <service android:name=".MyService"/>
