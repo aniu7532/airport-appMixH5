@@ -28,37 +28,37 @@ public class MainActivity1 extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main1);
         initView();
-        LogUtils.logD("plugin_1_onCreate");
+        LogUtils.logD("plugin_1_MainActivity_onCreate");
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        LogUtils.logD("plugin_1_onStart");
+        LogUtils.logD("plugin_1_MainActivity_onStart");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        LogUtils.logD("plugin_1_onResume");
+        LogUtils.logD("plugin_1_MainActivity_onResume");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        LogUtils.logD("plugin_1_onPause");
+        LogUtils.logD("plugin_1_MainActivity_onPause");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        LogUtils.logD("plugin_1_onStop");
+        LogUtils.logD("plugin_1_MainActivity_onStop");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        LogUtils.logD("plugin_1_onDestroy");
+        LogUtils.logD("plugin_1_MainActivity_onDestroy");
     }
 
     private void initView() {
