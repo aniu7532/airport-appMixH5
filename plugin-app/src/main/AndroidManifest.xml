@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.tencent.shadow.sample.plugin">
 
-<!--    android:theme="@style/AppTheme"-->
+    <!--    android:theme="@style/AppTheme"-->
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"
+        tools:ignore="ProtectedPermissions" />
 
     <application
+        android:name="com.tencent.shadow.sample.plugin.PluginApp"
         android:allowBackup="true"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:name="com.tencent.shadow.sample.plugin.PluginApp"
-        android:theme="@style/Theme.AppCompat.NoActionBar"
-        >
-        <service android:name=".MyService"/>
+        android:theme="@style/Theme.AppCompat.NoActionBar">
+        <service android:name=".MyService" />
 
-        <activity android:name=".CreateNotificationActivity">
+        <activity android:name=".MainActivity6">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,16 +25,18 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivity1"/>
-        <activity android:name=".MainActivity2"/>
-        <activity android:name=".MainActivity3"/>
-        <activity android:name=".MainActivity4"/>
-        <activity android:name=".MainActivity5"/>
-        <activity android:name=".MainActivity6"/>
+        <activity android:name=".MainActivity1" />
+        <activity android:name=".MainActivity2" />
+        <activity android:name=".MainActivity3" />
+        <activity android:name=".MainActivity4" />
+        <activity android:name=".MainActivity5" />
+        <!--<activity android:name=".MainActivity6"/>-->
 
-        <activity android:name=".TestActivityOrientationActivity"/>
+        <activity android:name=".TestActivityOrientationActivity" />
 
         <service android:name="com.tencent.shadow.sample.plugin.HostAddPluginViewService" />
+
+        <service android:name=".service.AppBasicService" />
 
         <!--dynamic activity注册 end -->
 

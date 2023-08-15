@@ -1,5 +1,7 @@
 package com.tencent.shadow.sample.plugin;
 
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -8,6 +10,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.tencent.shadow.sample.plugin.service.AppBasicService;
 
 public class MainActivity6 extends AppCompatActivity implements View.OnClickListener {
 
@@ -23,7 +27,14 @@ public class MainActivity6 extends AppCompatActivity implements View.OnClickList
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                label.setText("模拟报错Label");
+                //label.setText("模拟报错Label");
+                Intent myIntent = new Intent(getApplicationContext(), AppBasicService.class);
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    startForegroundService(myIntent);
+                } else {
+                    startService(myIntent);
+                }
             }
         });
     }
