@@ -21,9 +21,10 @@ import androidx.core.app.NotificationCompat;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.tencent.shadow.sample.plugin.LogUtils;
+
 import com.tencent.shadow.sample.plugin.R;
 import com.tencent.shadow.sample.plugin.entity.PersonnelInfo;
+import com.tencent.shadow.sample.plugin.utils.LogUtils;
 
 import org.java_websocket.enums.ReadyState;
 import org.java_websocket.handshake.ServerHandshake;
