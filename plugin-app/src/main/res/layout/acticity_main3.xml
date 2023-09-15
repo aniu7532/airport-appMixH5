@@ -26,7 +26,7 @@
         android:background="@drawable/shape_003"
         android:textColor="#333333"
         android:gravity="center"
-        android:text="获取host中的用户信息"
+        android:text="主动获取用户信息"
         android:layout_height="wrap_content"/>
 
 
