@@ -1,1 +1,0 @@
-adb push build/plugin-debug.zip /data/local/tmp

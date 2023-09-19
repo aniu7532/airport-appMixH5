@@ -105,11 +105,24 @@ shadow {
                 runtimeApkConfig = new Tuple2('caet-runtime-release.apk', ':caet-runtime:assembleRelease')
                 pluginApks {
                     pluginApk1 {
+                        // 【businessName】是业务名称。Shadow允许一个Loader同时加载多个插件。只要这些插件没有so库冲突，这些插件可以是完全不相关的业务的。
+                        // Shadow通过ClassLoader设计保证了多插件间Java类是隔离的，但是没法为Native的so库划出单独的内存空间。
+                        // 除了代码有可能冲突，对data目录的使用也是有可能冲突的。因为Shadow的原理是“插件是宿主代码的一部分”，
+                        // 所以所有插件都可以访问宿主的data目录。如果插件和宿主或者多插件之间有使用相同的data目录逻辑，
+                        // 比如MultiDex会向一个固定的SharePreference持久化数据，就会出现持久化数据的冲突。为了解决这个问题，
+                        // 引入的businessName。当businessName为空时，Shadow就认为这个插件跟宿主是同一个业务，这个插件直接使用宿主的data目录。
+                        // 当businessName设置了值时，Shadow就会在宿主的data目录中以businessName为参数新建一个子目录作为插件的data根目录使用。
+                        // 这样相同businessName的插件就会使用同一个data目录了，不同businessName的插件的data目录就相当于是隔离的了
                         businessName = 'plugin-one'
+                        //是插件apk的别名。因为插件apk的文件名是有可能因为带了版本号或者什么参数而变化，所以有这样一个partKey作为一个插件apk的不变的别名。
+                        // partKey可以用于在表示一个插件依赖另外一个插件时使用。Shadow内部在实现区分多插件逻辑时也会用partKey作为该apk的Key。
+                        // 在Loader等接口上的partKey参数指的也是这个partKey
                         partKey = 'plugin-one'
                         buildTask = 'assemblePluginRelease'
                         apkName = 'plugin-app-plugin-release.apk'
                         apkPath = 'plugin-app/build/outputs/apk/plugin/release/plugin-app-plugin-release.apk'
+                        //配置当前的插件可以访问宿主的那些类，默认情况下插件不能访问宿主的类
+                        //【注意】宿主访问插件里面的类比较麻烦
                         hostWhiteList = ["com.caet.shadow.sample.host.lib"]
                     }
                 }
@@ -120,8 +133,32 @@ shadow {
 
         runtimeApkProjectPath = 'caet-runtime'
 
+        //version表示的是该config.json文件采用的格式版本；
         version = 4
+
+        //compact_version表示的是当前config.json文件跟哪些格式的旧版本是兼容的，可以被支持旧版本格式的Manager使用。
         compactVersion = [1, 2, 3]
+
+        //UUID表示的是插件包内容的版本，只有相同UUID的apk才能一同工作。apk有3中类型：Loader、Runtime、Plugin。
+        // 所以在同一个config.json中描述的的所有apk都具有相同的UUID，所以能一同工作。UUID是要按照一般UUID生成算法生成的，
+        // 以保证多次发布的插件版本不会重复。UUID_NickName则是一般业务使用的版本名，对插件更新逻辑没有实际作用。
+
+        //需要注意的是，多个config.json是可以采用同一个UUID的。因为我们有时需要分段下载插件包，下载一部分先启动一部分。
+        // 所以可以将插件apk分到多个config.json中，采用相同的UUID。并且，Loader和Runtime只需要存在于其中一个插件包中就可以了。
+        uuid="E6592E15-B9F7-4D06-8D54-858CF3C2C364"
+
+        //UUID_NickName则是一般业务使用的版本名，对插件更新逻辑没有实际作用。
         uuidNickName = "1.0.0"
+
+        //修改打包出来的名字  buildTypes的前缀 debug/release
+        archivePrefix = 'main'
+        //修改打包出来的名字  buildTypes的后缀 debug/release
+        archiveSuffix = ''
+        //修改打包出来的名字  zip的输出路径
+        destinationDir = "${getRootProject().getBuildDir()}"
+
+        //复制到本地的adb命令
+        //adb push build/main-debug.zip /data/local/tmp
+
     }
 }
