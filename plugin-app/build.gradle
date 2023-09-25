@@ -159,6 +159,7 @@ shadow {
         //复制到本地的adb命令
         //adb push build/one-debug.zip /data/local/tmp
         //adb push build/one-release.zip /data/local/tmp
+        //adb push build/plugin-debug.zip /data/local/tmp
 
     }
 }

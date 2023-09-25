@@ -45,13 +45,6 @@ public class HostUiLayerProvider {
     }
 
     public View buildHostUiLayer() {
-        return null;
-//        return LayoutInflater.from(mHostApplicationContext)
-//                .inflate(R.layout.host_ui_layer_layout, null, false);
+        return LayoutInflater.from(mHostApplicationContext).inflate(R.layout.host_ui_layer_layout, null, false);
     }
-
-    public UserInfoBean getUserInfo() {
-        return null;
-    }
-
 }
