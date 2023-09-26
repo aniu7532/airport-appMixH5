@@ -19,7 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
-import com.caet.shadow.sample.host.lib.HostCreateNotification;
+
 
 /**
  * 测试插件发起的通知栏在宿主的运行情况
