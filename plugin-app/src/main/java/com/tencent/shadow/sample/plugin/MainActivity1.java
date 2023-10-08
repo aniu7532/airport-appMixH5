@@ -62,8 +62,10 @@ public class MainActivity1 extends AppCompatActivity implements View.OnClickList
     }
 
     private void initView() {
+
         img_back = findViewById(R.id.img_back);
-        img_back.setOnClickListener(this::onClick);
+        img_back.setOnClickListener(this);
+
         btnStartActivity = findViewById(R.id.btnStartActivity);
         btnStartActivity.setOnClickListener(this);
 
