@@ -9,4 +9,5 @@ public interface C {
      */
     String BROADCAST_LOGOUT = "com.host.logout";
     String BROADCAST_SCAN = "com.host.scan";
+    String BROADCAST_PLUGIN_HOST = "com.host.msg";
 }

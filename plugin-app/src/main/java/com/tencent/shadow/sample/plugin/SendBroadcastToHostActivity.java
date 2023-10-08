@@ -14,10 +14,8 @@ import com.tencent.shadow.sample.plugin.utils.LogUtils;
 
 /**
  * 插件向宿主中发送广播
- *
- * 测试未通过
  */
-public class SendGbToHostActivity extends AppCompatActivity {
+public class SendBroadcastToHostActivity extends AppCompatActivity {
 
     private Button btn_send_gb_to_host;
 
@@ -39,14 +37,12 @@ public class SendGbToHostActivity extends AppCompatActivity {
         btn_send_gb_to_host = findViewById(R.id.btn_send_gb_to_host);
         btn_send_gb_to_host.setOnClickListener(v -> {
 
-//            Intent intent = new Intent();
-//            intent.setAction("com.host.plugin_msg");
-//            intent.putExtra("plugin","plugin1");
-//            sendBroadcast(intent);
-
             Intent intent = new Intent();
-            intent.setAction("com.qyj.plugin_msg");
-            intent.putExtra("plugin","plugin1");
+            intent.setAction(C.BROADCAST_PLUGIN_HOST);
+            Bundle bundle=new Bundle();
+            bundle.putString("action","plugin向host发送信息");//发送广播的动机
+            bundle.putString("pluginName","one-debug");//当前是那个插件
+            intent.putExtra("bundle",bundle);
             sendBroadcast(intent);
 
 

@@ -33,7 +33,7 @@
         <!--<activity android:name=".MainActivity6"/>-->
 
         <!--插件向宿主发送广播-->
-        <activity android:name=".SendGbToHostActivity" />
+        <activity android:name=".SendBroadcastToHostActivity" />
 
         <activity android:name=".TestActivityOrientationActivity" />
 
