@@ -32,6 +32,9 @@
         <activity android:name=".MainActivity5" />
         <!--<activity android:name=".MainActivity6"/>-->
 
+        <!--插件向宿主发送广播-->
+        <activity android:name=".SendGbToHostActivity" />
+
         <activity android:name=".TestActivityOrientationActivity" />
 
         <service android:name="com.tencent.shadow.sample.plugin.HostAddPluginViewService" />

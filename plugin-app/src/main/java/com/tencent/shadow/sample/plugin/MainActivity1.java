@@ -93,6 +93,8 @@ public class MainActivity1 extends AppCompatActivity implements View.OnClickList
                 intent.putExtra("plugin","plugin1");
                 sendBroadcast(intent);
 
+
+
                 break;
             default:
                 break;
