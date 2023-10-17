@@ -57,6 +57,13 @@
             </intent-filter>
         </receiver>
 
+        <!--  宿主发送过来的定位信息服务 -->
+        <receiver android:name="com.tencent.shadow.sample.plugin.receiver.HostLocationReceiver">
+            <intent-filter>
+                <action android:name="com.host.send.location.plugin" />
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>
