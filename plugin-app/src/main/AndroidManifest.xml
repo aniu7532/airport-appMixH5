@@ -39,7 +39,12 @@
 
         <service android:name="com.tencent.shadow.sample.plugin.HostAddPluginViewService" />
 
+        <!--广播接收来自host的定位信息-->
+        <activity android:name=".AcceptLocationActivity" />
+
         <service android:name=".service.AppBasicService" />
+
+
 
         <!--dynamic activity注册 end -->
 
@@ -63,6 +68,7 @@
                 <action android:name="com.host.send.location.plugin" />
             </intent-filter>
         </receiver>
+
 
     </application>
 
