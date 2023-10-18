@@ -35,6 +35,9 @@
         <!--插件向宿主发送广播-->
         <activity android:name=".SendBroadcastToHostActivity" />
 
+        <!--插件自己构建通知栏-->
+        <activity android:name=".CreateNotificationActivity" />
+
         <activity android:name=".TestActivityOrientationActivity" />
 
         <service android:name="com.tencent.shadow.sample.plugin.HostAddPluginViewService" />

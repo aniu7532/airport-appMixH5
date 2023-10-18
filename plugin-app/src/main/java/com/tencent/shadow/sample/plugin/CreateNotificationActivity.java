@@ -35,9 +35,6 @@ public class CreateNotificationActivity extends AppCompatActivity implements Vie
     private Notification notification;
     private int notificationId = 1;
 
-
-
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,8 +72,8 @@ public class CreateNotificationActivity extends AppCompatActivity implements Vie
                     .setSmallIcon(R.mipmap.home_s)
                     .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.home_s))
                     .setAutoCancel(true)
-                    .setContentTitle("普通通知")
-                    .setContentText("我要搞钱")
+                    .setContentTitle("plugin-one")
+                    .setContentText("plugin-one")
                     .setContentIntent(pendingIntent)
                     .setAutoCancel(true)//设置自动取消
                     //.setStyle(new NotificationCompat.BigTextStyle().bigText("我要搞钱！！！富强、明主、文明、和谐、自由、平等、公正、法治、爱国、敬业、诚信、友善我要搞钱！！！富强、明主、文明、和谐、自由、平等、公正、法治、爱国、敬业、诚信、友善"))
@@ -89,8 +86,8 @@ public class CreateNotificationActivity extends AppCompatActivity implements Vie
                     .setSmallIcon(R.mipmap.home_s)
                     .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.home_s))
                     .setAutoCancel(true)
-                    .setContentTitle("普通通知")
-                    .setContentText("普通通知")
+                    .setContentTitle("plugin-one")
+                    .setContentText("plugin-one")
                     .setContentIntent(pendingIntent)
                     .setAutoCancel(true)//设置自动取消
                     .build();
