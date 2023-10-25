@@ -5,7 +5,7 @@ android {
     compileSdkVersion 30
     defaultConfig {
         applicationId "com.tencent.shadow.sample.plugin"
-        minSdkVersion 26
+        minSdkVersion 16
         targetSdkVersion 30
         versionCode 10
         versionName "1.0"
@@ -44,21 +44,21 @@ dependencies {
     normalImplementation project(':caet-host-lib')
 
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
-    testImplementation 'junit:junit:4.13.2'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     implementation "org.java-websocket:Java-WebSocket:1.4.0"
-    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'com.google.code.gson:gson:2.9.1'
 
     //强制使用androidx.core:core:1.6.0
-    configurations.all {
-        resolutionStrategy {
-            force 'androidx.core:core:1.6.0'
-        }
-    }
+//    configurations.all {
+//        resolutionStrategy {
+//            force 'androidx.core:core:1.6.0'
+//        }
+//    }
 
 }
 
@@ -158,7 +158,7 @@ shadow {
         uuidNickName = "1.0.0"
 
         //修改打包出来的名字  buildTypes的前缀 debug/release
-        archivePrefix = 'plugin-one'
+        archivePrefix = 'one'
         //修改打包出来的名字  buildTypes的后缀 debug/release
         archiveSuffix = ''
         //修改打包出来的名字  zip的输出路径
@@ -167,6 +167,7 @@ shadow {
         //复制到本地的adb命令
         //adb push build/one-debug.zip /data/local/tmp
         //adb push build/one-release.zip /data/local/tmp
+        //adb push build/one.zip /data/local/tmp
 
 
     }

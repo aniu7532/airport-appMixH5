@@ -17,8 +17,7 @@
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <service android:name=".MyService" />
 
-        <activity android:name=".HomeActivity"
-            android:exported="true">
+        <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
