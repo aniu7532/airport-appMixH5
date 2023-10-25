@@ -1,5 +1,6 @@
 package com.tencent.shadow.sample.plugin;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -22,6 +23,11 @@ public class MainActivity1 extends AppCompatActivity implements View.OnClickList
     private TextView tv_title;
 
     private EditText edt1;
+
+    public static void launch(Context context){
+        Intent intent=new Intent(context,MainActivity1.class);
+        context.startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

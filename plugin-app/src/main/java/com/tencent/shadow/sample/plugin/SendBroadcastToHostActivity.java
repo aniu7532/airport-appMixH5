@@ -1,5 +1,6 @@
 package com.tencent.shadow.sample.plugin;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +17,11 @@ import com.tencent.shadow.sample.plugin.utils.LogUtils;
  * 插件向宿主中发送广播
  */
 public class SendBroadcastToHostActivity extends AppCompatActivity {
+
+    public static void launch(Context context){
+        Intent intent=new Intent(context,SendBroadcastToHostActivity.class);
+        context.startActivity(intent);
+    }
 
     private TextView tv_send_gb_to_host;
 

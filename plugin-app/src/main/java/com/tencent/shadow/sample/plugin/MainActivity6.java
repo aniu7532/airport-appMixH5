@@ -1,5 +1,6 @@
 package com.tencent.shadow.sample.plugin;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -17,6 +18,11 @@ public class MainActivity6 extends AppCompatActivity implements View.OnClickList
 
     private Button loginBtn = null;
     private TextView label = null;
+
+    public static void launch(Context context){
+        Intent intent=new Intent(context,MainActivity6.class);
+        context.startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

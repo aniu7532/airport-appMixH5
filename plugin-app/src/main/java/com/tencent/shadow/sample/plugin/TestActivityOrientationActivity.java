@@ -1,5 +1,6 @@
 package com.tencent.shadow.sample.plugin;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
@@ -13,6 +14,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.tencent.shadow.sample.plugin.utils.LogUtils;
 
 public class TestActivityOrientationActivity extends AppCompatActivity {
+
+    public static void launch(Context context){
+        Intent intent=new Intent(context,TestActivityOrientationActivity.class);
+        context.startActivity(intent);
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

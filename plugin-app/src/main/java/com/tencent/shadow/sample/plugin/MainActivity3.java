@@ -1,6 +1,8 @@
 package com.tencent.shadow.sample.plugin;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -12,6 +14,12 @@ public class MainActivity3 extends Activity {
 
     private TextView tv_user_info;
     private TextView tv_get_user_info;
+
+    public static void launch(Context context){
+        Intent intent=new Intent(context,MainActivity3.class);
+        context.startActivity(intent);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

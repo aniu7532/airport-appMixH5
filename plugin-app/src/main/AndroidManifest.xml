@@ -17,10 +17,10 @@
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <service android:name=".MyService" />
 
-        <activity android:name=".MainActivity6">
+        <activity android:name=".HomeActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -30,7 +30,7 @@
         <activity android:name=".MainActivity3" />
         <activity android:name=".MainActivity4" />
         <activity android:name=".MainActivity5" />
-        <!--<activity android:name=".MainActivity6"/>-->
+       <activity android:name=".MainActivity6"/>
 
         <!--插件向宿主发送广播-->
         <activity android:name=".SendBroadcastToHostActivity" />

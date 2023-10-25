@@ -18,6 +18,12 @@ import androidx.appcompat.app.AppCompatActivity;
  */
 public class AcceptLocationActivity extends AppCompatActivity implements View.OnClickListener {
 
+    public static void launch(Context context){
+        Intent intent=new Intent(context,AcceptLocationActivity.class);
+        context.startActivity(intent);
+    }
+
+
     private ImageView img_back;
     private TextView tv_title;
 

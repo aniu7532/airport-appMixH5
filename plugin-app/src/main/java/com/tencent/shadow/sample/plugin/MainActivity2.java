@@ -1,6 +1,7 @@
 package com.tencent.shadow.sample.plugin;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -11,6 +12,11 @@ public class MainActivity2 extends Activity {
 
     private ImageView img_back;
     private TextView tv_title;
+
+    public static void launch(Context context){
+        Intent intent=new Intent(context,MainActivity2.class);
+        context.startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

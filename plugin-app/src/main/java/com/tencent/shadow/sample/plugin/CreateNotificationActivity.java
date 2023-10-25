@@ -26,6 +26,12 @@ import androidx.core.app.NotificationManagerCompat;
  */
 public class CreateNotificationActivity extends AppCompatActivity implements View.OnClickListener {
 
+    public static void launch(Context context){
+        Intent intent=new Intent(context,CreateNotificationActivity.class);
+        context.startActivity(intent);
+    }
+
+
     private ImageView img_back;
     private TextView tv_submit;
     private TextView tv_submit2;
