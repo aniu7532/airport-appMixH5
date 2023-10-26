@@ -14,6 +14,7 @@ public class HomeActivity extends PluginOneBaseActivity implements View.OnClickL
     private TextView tvCreateNotificationActivity;
     private TextView tvSendBroadcastToHostActivity;
     private TextView tvTestActivityOrientationActivity;
+    private TextView tvPermissionsTestActivity;//权限相关的东西
     private TextView tvMainActivity1;
     private TextView tvMainActivity2;
     private TextView tvMainActivity3;
@@ -42,6 +43,9 @@ public class HomeActivity extends PluginOneBaseActivity implements View.OnClickL
         tvTestActivityOrientationActivity = findViewById(R.id.tvTestActivityOrientationActivity);
         tvTestActivityOrientationActivity.setOnClickListener(this);
 
+        tvPermissionsTestActivity=findViewById(R.id.tvPermissionsTestActivity);
+        tvPermissionsTestActivity.setOnClickListener(this);
+
         tvMainActivity1 = findViewById(R.id.tvMainActivity1);
         tvMainActivity1.setOnClickListener(this);
         tvMainActivity2 = findViewById(R.id.tvMainActivity2);
@@ -62,7 +66,8 @@ public class HomeActivity extends PluginOneBaseActivity implements View.OnClickL
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.img_back:
-                exitApp();
+                //exitApp();
+                finish();
                 break;
             case R.id.tvAcceptLocationActivity:
                 AcceptLocationActivity.launch(this);
@@ -75,6 +80,9 @@ public class HomeActivity extends PluginOneBaseActivity implements View.OnClickL
                 break;
             case R.id.tvTestActivityOrientationActivity:
                 TestActivityOrientationActivity.launch(this);
+                break;
+            case R.id.tvPermissionsTestActivity:
+                PermissionsTestActivity.launch(this);
                 break;
             case R.id.tvMainActivity1:
                 MainActivity1.launch(this);

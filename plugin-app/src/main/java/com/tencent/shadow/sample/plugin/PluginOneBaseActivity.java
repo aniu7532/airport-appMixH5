@@ -1,14 +1,27 @@
 package com.tencent.shadow.sample.plugin;
 
+import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
+import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.List;
 
 public class PluginOneBaseActivity extends AppCompatActivity {
 
+
+    public Context context;
+    public Activity activity;
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        context=this;
+        activity=this;
+    }
 
     /**
      * 退出整个app的标准写法

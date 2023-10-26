@@ -44,7 +44,7 @@ dependencies {
     normalImplementation project(':caet-host-lib')
 
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
@@ -53,12 +53,17 @@ dependencies {
     implementation "org.java-websocket:Java-WebSocket:1.4.0"
     implementation 'com.google.code.gson:gson:2.9.1'
 
-    //强制使用androidx.core:core:1.6.0
-//    configurations.all {
-//        resolutionStrategy {
-//            force 'androidx.core:core:1.6.0'
-//        }
-//    }
+
+    //最新请求权限的框架
+    implementation 'com.github.getActivity:XXPermissions:12.8'
+
+    //GSYVideoPlayer用了core:1.7.0但是项目中用到的是1.5.0所以这里必须强制统一使用1.6.0
+    configurations.all {
+        resolutionStrategy {
+            force 'androidx.core:core:1.6.0'
+        }
+    }
+
 
 }
 
