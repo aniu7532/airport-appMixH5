@@ -1,22 +1,23 @@
 package com.tencent.shadow.sample.plugin;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 
 import com.caet.shadow.sample.host.lib.HostUserInfo;
 import com.caet.shadow.sample.host.lib.UserInfoBean;
 
-public class MainActivity3 extends Activity {
+/**
+ * 主动获取host参数
+ */
+public class ObtainHostDataActivity extends BaseActivity {
 
     private TextView tv_user_info;
     private TextView tv_get_user_info;
 
     public static void launch(Context context){
-        Intent intent=new Intent(context,MainActivity3.class);
+        Intent intent=new Intent(context, ObtainHostDataActivity.class);
         context.startActivity(intent);
     }
 

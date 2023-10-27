@@ -1,4 +1,4 @@
-package com.tencent.shadow.sample.plugin;
+package com.tencent.shadow.sample.plugin.service;
 
 import android.app.IntentService;
 import android.content.Intent;
@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.caet.shadow.sample.host.lib.HostAddPluginViewContainer;
 import com.caet.shadow.sample.host.lib.HostAddPluginViewContainerHolder;
+import com.tencent.shadow.sample.plugin.R;
 import com.tencent.shadow.sample.plugin.utils.LogUtils;
 
 public class HostAddPluginViewService  extends IntentService {

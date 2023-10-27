@@ -5,24 +5,29 @@
 
     <!--    android:theme="@style/AppTheme"-->
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"
         tools:ignore="ProtectedPermissions" />
+
+    <!--相机权限-->
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <!--存储权限管理-->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+    <uses-permission
+        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
 
     <application
         android:name="com.tencent.shadow.sample.plugin.PluginApp"
         android:allowBackup="true"
         android:label="@string/app_name"
-        android:supportsRtl="true"
         android:requestLegacyExternalStorage="true"
+        android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <service android:name=".MyService" />
+        <service android:name=".service.MyService" />
 
         <activity android:name=".HomeActivity">
             <intent-filter>
@@ -32,13 +37,13 @@
         </activity>
 
         <activity android:name=".MainActivity1" />
-        <activity android:name=".MainActivity2" />
-        <activity android:name=".MainActivity3" />
+        <activity android:name=".ReceiveIntentParameterActivity" />
+        <activity android:name=".ObtainHostDataActivity" />
         <activity android:name=".MainActivity4" />
         <activity android:name=".MainActivity5" />
-       <activity android:name=".MainActivity6"/>
+        <activity android:name=".MainActivity6" />
 
-        <activity android:name=".PermissionsTestActivity"/>
+        <activity android:name=".PermissionsTestActivity" />
 
         <!--插件向宿主发送广播-->
         <activity android:name=".SendBroadcastToHostActivity" />
@@ -48,7 +53,7 @@
 
         <activity android:name=".TestActivityOrientationActivity" />
 
-        <service android:name="com.tencent.shadow.sample.plugin.HostAddPluginViewService" />
+        <service android:name="com.tencent.shadow.sample.plugin.service.HostAddPluginViewService" />
 
         <!--广播接收来自host的定位信息-->
         <activity android:name=".AcceptLocationActivity" />
@@ -56,11 +61,11 @@
         <service android:name=".service.AppBasicService" />
 
 
-
         <!--dynamic activity注册 end -->
 
         <!--  宿主发送过来退出登录广播 -->
-        <receiver android:name="com.tencent.shadow.sample.plugin.receiver.HostLogoutReceiver"
+        <receiver
+            android:name="com.tencent.shadow.sample.plugin.receiver.HostLogoutReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.host.logout" />
@@ -68,7 +73,8 @@
         </receiver>
 
         <!--  宿主发送过来的扫码广播 -->
-        <receiver android:name="com.tencent.shadow.sample.plugin.receiver.HostScanReceiver"
+        <receiver
+            android:name="com.tencent.shadow.sample.plugin.receiver.HostScanReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.host.scan" />
@@ -76,13 +82,16 @@
         </receiver>
 
         <!--  宿主发送过来的定位信息服务 -->
-        <receiver android:name="com.tencent.shadow.sample.plugin.receiver.HostLocationReceiver"
+        <receiver
+            android:name="com.tencent.shadow.sample.plugin.receiver.HostLocationReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.host.send.location.plugin" />
             </intent-filter>
         </receiver>
 
+
+        <!--独立运行将这里打开，打包成插件就吧这里注释掉，采用host的provider-->
 <!--        <provider-->
 <!--            android:name="androidx.core.content.FileProvider"-->
 <!--            android:authorities="${applicationId}.FileProvider"-->

@@ -23,7 +23,6 @@ public class AcceptLocationActivity extends AppCompatActivity implements View.On
         context.startActivity(intent);
     }
 
-
     private ImageView img_back;
     private TextView tv_title;
 

@@ -9,11 +9,10 @@ import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.tencent.shadow.sample.plugin.utils.LogUtils;
 
-public class TestActivityOrientationActivity extends AppCompatActivity {
+public class TestActivityOrientationActivity extends BaseActivity {
 
     public static void launch(Context context){
         Intent intent=new Intent(context,TestActivityOrientationActivity.class);

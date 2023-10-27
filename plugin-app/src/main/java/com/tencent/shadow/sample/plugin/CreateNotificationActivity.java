@@ -15,7 +15,6 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
@@ -24,7 +23,7 @@ import androidx.core.app.NotificationManagerCompat;
 /**
  * 测试插件发起的通知栏在宿主的运行情况
  */
-public class CreateNotificationActivity extends AppCompatActivity implements View.OnClickListener {
+public class CreateNotificationActivity extends BaseActivity implements View.OnClickListener {
 
     public static void launch(Context context){
         Intent intent=new Intent(context,CreateNotificationActivity.class);

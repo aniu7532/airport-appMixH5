@@ -4,19 +4,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.tencent.shadow.sample.plugin.utils.LogUtils;
 
 /**
  * 插件向宿主中发送广播
  */
-public class SendBroadcastToHostActivity extends AppCompatActivity {
+public class SendBroadcastToHostActivity extends BaseActivity {
 
     public static void launch(Context context){
         Intent intent=new Intent(context,SendBroadcastToHostActivity.class);

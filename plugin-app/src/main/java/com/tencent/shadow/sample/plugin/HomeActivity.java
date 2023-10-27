@@ -6,7 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.Nullable;
 
-public class HomeActivity extends PluginOneBaseActivity implements View.OnClickListener {
+public class HomeActivity extends BaseActivity implements View.OnClickListener {
 
     private ImageView img_back;
     private TextView tv_title;
@@ -16,8 +16,8 @@ public class HomeActivity extends PluginOneBaseActivity implements View.OnClickL
     private TextView tvTestActivityOrientationActivity;
     private TextView tvPermissionsTestActivity;//权限相关的东西
     private TextView tvMainActivity1;
-    private TextView tvMainActivity2;
-    private TextView tvMainActivity3;
+    private TextView tvReceiveIntentParameter;
+    private TextView tvObtainHostData;
     private TextView tvMainActivity4;
     private TextView tvMainActivity5;
     private TextView tvMainActivity6;
@@ -48,10 +48,10 @@ public class HomeActivity extends PluginOneBaseActivity implements View.OnClickL
 
         tvMainActivity1 = findViewById(R.id.tvMainActivity1);
         tvMainActivity1.setOnClickListener(this);
-        tvMainActivity2 = findViewById(R.id.tvMainActivity2);
-        tvMainActivity2.setOnClickListener(this);
-        tvMainActivity3 = findViewById(R.id.tvMainActivity3);
-        tvMainActivity3.setOnClickListener(this);
+        tvReceiveIntentParameter = findViewById(R.id.tvReceiveIntentParameter);
+        tvReceiveIntentParameter.setOnClickListener(this);
+        tvObtainHostData = findViewById(R.id.tvObtainHostData);
+        tvObtainHostData.setOnClickListener(this);
         tvMainActivity4 = findViewById(R.id.tvMainActivity4);
         tvMainActivity4.setOnClickListener(this);
         tvMainActivity5 = findViewById(R.id.tvMainActivity5);
@@ -87,11 +87,11 @@ public class HomeActivity extends PluginOneBaseActivity implements View.OnClickL
             case R.id.tvMainActivity1:
                 MainActivity1.launch(this);
                 break;
-            case R.id.tvMainActivity2:
-                MainActivity2.launch(this);
+            case R.id.tvReceiveIntentParameter:
+                ReceiveIntentParameterActivity.launch(this);
                 break;
-            case R.id.tvMainActivity3:
-                MainActivity3.launch(this);
+            case R.id.tvObtainHostData:
+                ObtainHostDataActivity.launch(this);
                 break;
             case R.id.tvMainActivity4:
                 MainActivity4.launch(this);

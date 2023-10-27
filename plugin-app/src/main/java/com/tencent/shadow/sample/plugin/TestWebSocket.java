@@ -1,6 +1,5 @@
 package com.tencent.shadow.sample.plugin;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -12,7 +11,7 @@ import org.java_websocket.handshake.ServerHandshake;
 
 import java.net.URI;
 
-public class TestWebSocket extends Activity {
+public class TestWebSocket extends BaseActivity {
     String TAG = "TAG";
     public JWebSocketClient client;
 

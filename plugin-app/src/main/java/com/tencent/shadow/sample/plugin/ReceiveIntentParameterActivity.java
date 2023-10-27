@@ -1,6 +1,5 @@
 package com.tencent.shadow.sample.plugin;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,20 +7,23 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity2 extends Activity {
+/**
+ * 接受host 传递过来的参数
+ */
+public class ReceiveIntentParameterActivity extends BaseActivity {
 
     private ImageView img_back;
     private TextView tv_title;
 
     public static void launch(Context context){
-        Intent intent=new Intent(context,MainActivity2.class);
+        Intent intent=new Intent(context, ReceiveIntentParameterActivity.class);
         context.startActivity(intent);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.acticity_main2);
+        setContentView(R.layout.acticity_receive_intent_paramater);
         img_back = findViewById(R.id.img_back);
         img_back.setOnClickListener(v -> {
             finish();
@@ -42,7 +44,7 @@ public class MainActivity2 extends Activity {
                     .concat("\n").concat("depid：").concat(depid)
                     .concat("\n").concat("token").concat(token));
         }catch (Exception e){
-            Toast.makeText(MainActivity2.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(ReceiveIntentParameterActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 }

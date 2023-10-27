@@ -1,16 +1,18 @@
-package com.tencent.shadow.sample.plugin;
+package com.tencent.shadow.sample.plugin.service;
 
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 import android.os.RemoteException;
+import android.widget.Toast;
 
+import com.tencent.shadow.sample.plugin.IMyAidlInterface;
 import com.tencent.shadow.sample.plugin.utils.LogUtils;
 
 
-public class MyService extends Service {
+public class BindService extends Service {
 
-    public MyService() {
+    public BindService() {
     }
 
     @Override

@@ -10,11 +10,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.tencent.shadow.sample.plugin.utils.LogUtils;
 
-public class MainActivity1 extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity1 extends BaseActivity implements View.OnClickListener {
 
     private Button btnStartActivity;
     private ImageView img_back;
@@ -91,7 +89,7 @@ public class MainActivity1 extends AppCompatActivity implements View.OnClickList
                 finish();
                 break;
             case R.id.btnStartActivity:
-                startActivity(new Intent(MainActivity1.this, MainActivity2.class));
+                startActivity(new Intent(MainActivity1.this, ReceiveIntentParameterActivity.class));
                 break;
             case R.id.tv_submit:
                 Toast.makeText(this, edt1.getText().toString().concat("上报成功"), Toast.LENGTH_SHORT).show();

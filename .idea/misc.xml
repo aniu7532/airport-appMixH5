@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/AsMsGitShadow/plugin-project/caet-host-lib/src/main/res/layout/host_ui_layer_layout.xml" value="0.3619791666666667" />
         <entry key="..\:/AsMsGitShadow/plugin-project/plugin-app/src/main/res/drawable/shape_003.xml" value="0.378125" />
+        <entry key="..\:/AsMsGitShadow/plugin-project/plugin-app/src/main/res/drawable/shape_corners_20_solid_d900.xml" value="0.378125" />
         <entry key="..\:/AsMsGitShadow/plugin-project/plugin-app/src/main/res/layout/acticity_main2.xml" value="0.3619791666666667" />
         <entry key="..\:/AsMsGitShadow/plugin-project/plugin-app/src/main/res/layout/acticity_main3.xml" value="0.3619791666666667" />
         <entry key="..\:/AsMsGitShadow/plugin-project/plugin-app/src/main/res/layout/acticity_main5.xml" value="0.3619791666666667" />
@@ -12,12 +13,13 @@
         <entry key="..\:/AsMsGitShadow/plugin-project/plugin-app/src/main/res/layout/acticity_permissions_test.xml" value="0.3619791666666667" />
         <entry key="..\:/AsMsGitShadow/plugin-project/plugin-app/src/main/res/layout/activity_accept_location.xml" value="0.1" />
         <entry key="..\:/AsMsGitShadow/plugin-project/plugin-app/src/main/res/layout/activity_create_notification.xml" value="0.34739583333333335" />
-        <entry key="..\:/AsMsGitShadow/plugin-project/plugin-app/src/main/res/layout/activity_home.xml" value="0.1" />
+        <entry key="..\:/AsMsGitShadow/plugin-project/plugin-app/src/main/res/layout/activity_home.xml" value="0.33" />
         <entry key="..\:/AsMsGitShadow/plugin-project/plugin-app/src/main/res/layout/activity_main1.xml" value="0.3619791666666667" />
         <entry key="..\:/AsMsGitShadow/plugin-project/plugin-app/src/main/res/layout/activity_send_gb_to_host.xml" value="0.1" />
         <entry key="..\:/AsMsGitShadow/plugin-project/plugin-app/src/main/res/layout/activity_test_orientation.xml" value="0.34739583333333335" />
         <entry key="..\:/AsMsGitShadow/plugin-project/plugin-app/src/main/res/layout/app_bar.xml" value="0.3619791666666667" />
         <entry key="..\:/AsMsGitShadow/plugin-project/plugin-app/src/main/res/layout/layout_host_add_plugin_view.xml" value="0.3619791666666667" />
+        <entry key="..\:/AsMsGitShadow/plugin-project/plugin-app/src/main/res/layout/toast_success.xml" value="0.3619791666666667" />
         <entry key="..\:/AsMsGitShadow/plugin-project/sample-host-lib/src/main/res/layout/host_ui_layer_layout.xml" value="0.3619791666666667" />
       </map>
     </option>

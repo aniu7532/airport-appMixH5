@@ -4,17 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.tencent.shadow.sample.plugin.service.AppBasicService;
 
-public class MainActivity6 extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity6 extends BaseActivity implements View.OnClickListener {
 
     private Button loginBtn = null;
     private TextView label = null;

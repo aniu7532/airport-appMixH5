@@ -8,7 +8,6 @@
 
     <include layout="@layout/app_bar"/>
 
-
     <TextView
         android:layout_width="match_parent"
         android:text="plugin-one1.zip"
@@ -30,7 +29,7 @@
             android:layout_height="match_parent">
             <TextView
                 android:id="@+id/tvAcceptLocationActivity"
-                android:text="AcceptLocationActivity"
+                android:text="接收host过来的定位信息(广播方式)"
                 android:layout_width="match_parent"
                 android:textSize="15sp"
                 android:paddingVertical="12dp"
@@ -51,7 +50,7 @@
                 android:background="@drawable/shape_003"
                 android:textColor="#333333"
                 android:gravity="center"
-                android:text="CreateNotificationActivity"
+                android:text="通知栏相关"
                 android:layout_height="wrap_content"/>
 
             <TextView
@@ -108,7 +107,7 @@
                 android:layout_height="wrap_content"/>
 
             <TextView
-                android:id="@+id/tvMainActivity2"
+                android:id="@+id/tvReceiveIntentParameter"
                 android:layout_width="match_parent"
                 android:textSize="15sp"
                 android:paddingVertical="12dp"
@@ -117,11 +116,11 @@
                 android:background="@drawable/shape_003"
                 android:textColor="#333333"
                 android:gravity="center"
-                android:text="MainActivity2"
+                android:text="接受host传递过来的参数"
                 android:layout_height="wrap_content"/>
 
             <TextView
-                android:id="@+id/tvMainActivity3"
+                android:id="@+id/tvObtainHostData"
                 android:layout_width="match_parent"
                 android:textSize="15sp"
                 android:paddingVertical="12dp"
@@ -130,7 +129,7 @@
                 android:background="@drawable/shape_003"
                 android:textColor="#333333"
                 android:gravity="center"
-                android:text="MainActivity3"
+                android:text="主动获取host中的数据"
                 android:layout_height="wrap_content"/>
 
 

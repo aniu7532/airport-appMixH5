@@ -5,6 +5,7 @@ import android.os.Environment;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public class FileUtil {
 
@@ -19,15 +20,14 @@ public class FileUtil {
         if (!dir.exists()) {
             boolean isSuccess = dir.mkdirs();
             if (isSuccess) {
-               // Toast.makeText(MainActivity.this, "文件夹创建成功", Toast.LENGTH_LONG).show();
-
+                LogUtils.logD("文件创建成功");
             } else {
-                //Toast.makeText(MainActivity.this, "文件夹创建失败", Toast.LENGTH_LONG).show();
+                LogUtils.logD("文件创建失败");
             }
         }
         // 用日期作为文件名，确保唯一性
         Date date = new Date();
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss", Locale.CHINA);
         String fileName = saveDir + "/" + formatter.format(date) + ".png";
 
         return fileName;

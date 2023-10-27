@@ -1,26 +1,31 @@
 package com.tencent.shadow.sample.plugin;
 
 import android.app.Activity;
-import android.app.ActivityManager;
 import android.content.Context;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.List;
-
-public class PluginOneBaseActivity extends AppCompatActivity {
+public class BaseActivity extends AppCompatActivity {
 
 
     public Context context;
     public Activity activity;
+    private View view;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         context=this;
         activity=this;
+        view = LayoutInflater.from(this).inflate(R.layout.layout_toast, new LinearLayout(this));
     }
 
     /**
@@ -41,4 +46,15 @@ public class PluginOneBaseActivity extends AppCompatActivity {
 
         finish();
     }
+
+    public void showToast(String message) {
+        Toast toast = new Toast(this);
+        TextView tv = view.findViewById(R.id.tv_title);
+        tv.setText(message);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.setDuration(Toast.LENGTH_SHORT);
+        toast.setView(view);
+        toast.show();
+    }
+
 }
