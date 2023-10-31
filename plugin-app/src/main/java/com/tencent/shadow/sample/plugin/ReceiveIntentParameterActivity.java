@@ -29,7 +29,7 @@ public class ReceiveIntentParameterActivity extends BaseActivity {
             finish();
         });
         tv_title = findViewById(R.id.tv_title);
-        tv_title.setText("作业接收");
+        tv_title.setText("接受host传递的参数");
 
         TextView tv_canshu_info = findViewById(R.id.tv_canshu_info);
         Intent intent = getIntent();
