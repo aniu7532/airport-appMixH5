@@ -95,4 +95,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_vertical"
+        android:text="新修改的变动"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
 </LinearLayout>
