@@ -140,6 +140,13 @@ public class PermissionsTestActivity extends BaseActivity implements View.OnClic
                 Uri uri = null;
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
 
+                    //插件化运行就是这个
+                    //uri = FileProvider.getUriForFile(context, "com.caet.asapp".concat(".FileProvider"), new File(filePath));
+
+                    //独立运行就是自己的
+                    //uri = FileProvider.getUriForFile(context, "com.tencent.shadow.sample.plugin".concat(".FileProvider"), new File(filePath));
+
+                    //这样写的目的是可以灵活读取，不需要手动改变代码，可以自行根据独立运行或者插件化运行读取对应authority
                     uri = FileProvider.getUriForFile(context, BuildConfig.APPLICATION_ID.concat(".FileProvider"), new File(filePath));
 
                     LogUtils.logD("打印FileProvider");
