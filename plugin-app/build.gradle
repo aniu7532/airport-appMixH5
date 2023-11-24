@@ -177,6 +177,7 @@ shadow {
         //adb push build/one-debug.zip /data/local/tmp
         //adb push build/one-release.zip /data/local/tmp
         //adb push build/one.zip /data/local/tmp
+        //adb push build/68825532-a5ed-4126-84ee-2c00a6ed82f9.zip /data/local/tmp
 
 
     }
