@@ -85,7 +85,7 @@
             android:name="com.tencent.shadow.sample.plugin.receiver.HostLocationReceiver"
             android:exported="false">
             <intent-filter>
-                <action android:name="com.host.send.location.plugin" />
+                <action android:name="com.host.location" />
             </intent-filter>
         </receiver>
 

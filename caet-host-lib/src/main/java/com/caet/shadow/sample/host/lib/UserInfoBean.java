@@ -6,12 +6,14 @@ public class UserInfoBean {
     private String name;
     private String depid;
     private String token;
+    private String code;
 
-    public UserInfoBean(String id, String name, String depid, String token) {
+    public UserInfoBean(String id, String name, String depid, String token,String code) {
         this.id = id;
         this.name = name;
         this.depid = depid;
         this.token = token;
+        this.code = code;
     }
 
     public String getId() {
@@ -44,5 +46,13 @@ public class UserInfoBean {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 }
