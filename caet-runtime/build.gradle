@@ -26,8 +26,8 @@ android {
 }
 
 dependencies {
-    //implementation "com.tencent.shadow.core:activity-container:$shadow_version"
-    implementation "com.tencent.shadow.core:activity-container:2.2.1"
+    implementation "com.tencent.shadow.core:activity-container:$shadow_version"
+    //implementation "com.tencent.shadow.core:activity-container:2.2.1"
 
 }
 
