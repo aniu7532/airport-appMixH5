@@ -39,6 +39,9 @@ public class CreateNotificationActivity extends BaseActivity implements View.OnC
     private Notification notification;
     private int notificationId = 1;
 
+
+    private TextView tv_title;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +54,8 @@ public class CreateNotificationActivity extends BaseActivity implements View.OnC
         tv_submit2 = findViewById(R.id.tv_submit2);
         tv_submit2.setOnClickListener(this);
 
+        tv_title= findViewById(R.id.tv_submit2);
+        tv_title.setText("[plugin-project]通知栏");
 
         //发送通知首先要通过通知服务得到通知管理者
         notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
