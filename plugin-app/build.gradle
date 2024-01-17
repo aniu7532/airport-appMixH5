@@ -110,7 +110,7 @@ shadow {
                         businessName = 'plugin-one'//businessName相同的插件，context获取的Dir是相同的。businessName留空，表示和宿主相同业务，直接使用宿主的Dir。
                         partKey = 'plugin-one'
                         buildTask = 'assemblePluginDebug'
-                        //apkName = 'plugin-app-plugin-debug.apk'
+                        apkName = 'plugin-app-plugin-debug.apk'
                         apkPath = 'plugin-app/build/outputs/apk/plugin/debug/plugin-app-plugin-debug.apk'
                         hostWhiteList = ["com.caet.shadow.sample.host.lib"]
                     }
@@ -136,7 +136,7 @@ shadow {
                         // 在Loader等接口上的partKey参数指的也是这个partKey
                         partKey = 'plugin-one'
                         buildTask = 'assemblePluginRelease'
-                        //apkName = 'plugin-app-plugin-release.apk'
+                        apkName = 'plugin-app-plugin-release.apk'
                         apkPath = 'plugin-app/build/outputs/apk/plugin/release/plugin-app-plugin-release.apk'
                         //配置当前的插件可以访问宿主的那些类，默认情况下插件不能访问宿主的类
                         //【注意】宿主访问插件里面的类比较麻烦

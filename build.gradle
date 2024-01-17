@@ -2,7 +2,6 @@
 
 buildscript {
     ext.shadow_version = '2.2.1'
-    //ext.shadow_version = '2.3.0'
     repositories {
         if (!System.getenv().containsKey("DISABLE_TENCENT_MAVEN_MIRROR")) {
             maven { url 'https://mirrors.tencent.com/nexus/repository/maven-public/' }

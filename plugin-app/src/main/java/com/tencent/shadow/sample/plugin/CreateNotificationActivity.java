@@ -19,14 +19,13 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
 
-
 /**
  * 测试插件发起的通知栏在宿主的运行情况
  */
 public class CreateNotificationActivity extends BaseActivity implements View.OnClickListener {
 
-    public static void launch(Context context){
-        Intent intent=new Intent(context,CreateNotificationActivity.class);
+    public static void launch(Context context) {
+        Intent intent = new Intent(context, CreateNotificationActivity.class);
         context.startActivity(intent);
     }
 
@@ -45,11 +44,11 @@ public class CreateNotificationActivity extends BaseActivity implements View.OnC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_notification);
 
-        img_back=findViewById(R.id.img_back);
+        img_back = findViewById(R.id.img_back);
         img_back.setOnClickListener(this);
-        tv_submit=findViewById(R.id.tv_submit);
+        tv_submit = findViewById(R.id.tv_submit);
         tv_submit.setOnClickListener(this);
-        tv_submit2=findViewById(R.id.tv_submit2);
+        tv_submit2 = findViewById(R.id.tv_submit2);
         tv_submit2.setOnClickListener(this);
 
 
@@ -69,7 +68,13 @@ public class CreateNotificationActivity extends BaseActivity implements View.OnC
         intent.putExtra("title", "打工人");
         intent.putExtra("content", "我要搞钱");
 
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+        PendingIntent pendingIntent;
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.S) {
+            pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+        } else {
+            pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
+        }
+
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             createNotificationChannel("test", "测试通知", NotificationManagerCompat.IMPORTANCE_MAX);
@@ -111,7 +116,7 @@ public class CreateNotificationActivity extends BaseActivity implements View.OnC
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.img_back:
                 finish();
                 break;
