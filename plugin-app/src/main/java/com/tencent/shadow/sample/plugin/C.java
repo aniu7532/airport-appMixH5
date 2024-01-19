@@ -1,5 +1,7 @@
 package com.tencent.shadow.sample.plugin;
 
+
+
 public interface C {
 
     String logTag="TAG";
@@ -13,6 +15,7 @@ public interface C {
     String BROADCAST_HOST_SEND_LOCATION_PLUGIN = "com.host.send.location.plugin";//宿主给插件发送定位信息
     String BROADCAST_HOST_SEND_LOCATION_PLUGIN2 = "com.host.send.location.plugin2";//宿主给插件发送定位信息
 
+    boolean d=BuildConfig.DEBUG;
 
     /**
      * plugin to host broadcast

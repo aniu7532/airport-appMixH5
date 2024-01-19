@@ -24,6 +24,7 @@ import androidx.core.content.FileProvider;
 import com.bumptech.glide.Glide;
 import com.hjq.permissions.OnPermissionCallback;
 import com.hjq.permissions.XXPermissions;
+
 import com.tencent.shadow.sample.plugin.utils.FileUtil;
 import com.tencent.shadow.sample.plugin.utils.LogUtils;
 import com.tencent.shadow.sample.plugin.utils.UriToPathUtils;
