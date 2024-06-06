@@ -1,0 +1,23 @@
+[
+    {
+        "name":"plugin-one*",
+        "icon":"muti_check",
+        "href":"",
+        "funtype":"app",
+        "target":1,
+        "sort":6,
+        "children":[
+            {
+                "name":"启动assets网页",
+                "icon":"muti_police",
+                "href":"/plugin-one/com.tencent.shadow.sample.plugin.LoadAssetsWebActivity",
+                "funtype":"app",
+                "target":3,
+                "sort":1,
+                "children":[],
+                "controls":[]
+            }
+        ],
+        "controls":[]
+    }
+]
