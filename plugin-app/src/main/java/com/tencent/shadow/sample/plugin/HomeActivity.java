@@ -21,6 +21,8 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
     private TextView tvMainActivity4;
     private TextView tvMainActivity5;
     private TextView tvMainActivity6;
+    private TextView tvLoadWeb;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -58,6 +60,9 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
         tvMainActivity5.setOnClickListener(this);
         tvMainActivity6 = findViewById(R.id.tvMainActivity6);
         tvMainActivity6.setOnClickListener(this);
+        tvLoadWeb = findViewById(R.id.tvLoadWeb);
+        tvLoadWeb.setOnClickListener(this);
+
 
 
     }
@@ -101,6 +106,9 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.tvMainActivity6:
                 MainActivity6.launch(this);
+                break;
+            case R.id.tvLoadWeb://加载网页
+                LoadAssetsWebActivity.launch(this);
                 break;
         }
     }

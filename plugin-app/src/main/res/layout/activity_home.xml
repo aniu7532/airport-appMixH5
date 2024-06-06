@@ -173,6 +173,19 @@
                 android:text="MainActivity6"
                 android:layout_height="wrap_content"/>
 
+            <TextView
+                android:id="@+id/tvLoadWeb"
+                android:layout_width="match_parent"
+                android:textSize="15sp"
+                android:paddingVertical="12dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/shape_003"
+                android:textColor="#333333"
+                android:gravity="center"
+                android:text="加载Assets中的网页"
+                android:layout_height="wrap_content"/>
+
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>

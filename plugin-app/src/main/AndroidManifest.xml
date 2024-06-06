@@ -43,6 +43,8 @@
         <activity android:name=".MainActivity5" />
         <activity android:name=".MainActivity6" />
 
+        <activity android:name=".LoadAssetsWebActivity" />
+
         <activity android:name=".PermissionsTestActivity" />
 
         <!--插件向宿主发送广播-->
