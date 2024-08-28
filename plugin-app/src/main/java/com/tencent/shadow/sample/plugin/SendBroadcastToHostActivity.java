@@ -69,10 +69,10 @@ public class SendBroadcastToHostActivity extends BaseActivity {
                 intent.setAction(C.BROADCAST_PLUGIN_HOST);
                 Bundle bundle=new Bundle();
                 bundle.putString("action","PLUG_CREATE_NOTIFICATION");//发送广播的动机
-                bundle.putString("href","/plugin-one/com.tencent.shadow.sample.plugin.SendBroadcastToHostActivity");//跟menu.json中配置的href  参考/plugin-one/com.tencent.shadow.sample.plugin.LoadAssetsWebActivity
+                bundle.putString("href","");//跟menu.json中配置的href  参考/plugin-one/com.tencent.shadow.sample.plugin.LoadAssetsWebActivity
                 bundle.putString("target","3");//一般固定写3
-                bundle.putString("notificationContentTitle","插件给宿主发广播通知宿主创建通知栏");//通知栏标题
-                bundle.putString("notificationContentText","插件给宿主发广播通知宿主创建通知栏");//通知栏内容
+                bundle.putString("notificationContentTitle","");//通知栏标题
+                bundle.putString("notificationContentText","");//通知栏内容
                 intent.putExtra("bundle",bundle);
                 sendBroadcast(intent);
             }
