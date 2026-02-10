@@ -1,6 +1,6 @@
 [
     {
-        "name":"plugin-one*",
+        "name":"应急管理服务",
         "icon":"muti_check",
         "href":"",
         "funtype":"app",
@@ -8,9 +8,9 @@
         "sort":6,
         "children":[
             {
-                "name":"启动assets网页",
+                "name":"应急处置信息",
                 "icon":"muti_police",
-                "href":"/plugin-one/com.tencent.shadow.sample.plugin.LoadAssetsWebActivity",
+                "href":"/ems/com.tencent.shadow.sample.plugin.LoadAssetsWebActivity",
                 "funtype":"app",
                 "target":3,
                 "sort":1,

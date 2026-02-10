@@ -7,8 +7,8 @@ android {
         applicationId "com.tencent.shadow.sample.plugin"
         minSdkVersion 23
         targetSdkVersion 32
-        versionCode 10
-        versionName "1.0"
+        versionCode 3
+        versionName "3"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
@@ -22,6 +22,7 @@ android {
         }
     }
 
+    // dabaojiaoben packagePluginRelease  ./gradlew :plugin-app:packageReleasePlugin
     // 将插件applicationId设置为和宿主相同
     productFlavors {
         plugin {
@@ -55,7 +56,7 @@ dependencies {
 
 
     //最新请求权限的框架
-    implementation 'com.github.getActivity:XXPermissions:12.8'
+    implementation 'com.github.getActivity:XXPermissions:20.0'
 
     //最新的glide
     implementation 'com.github.bumptech.glide:glide:4.12.0'
@@ -107,8 +108,8 @@ shadow {
                 runtimeApkConfig = new Tuple2('caet-runtime-debug.apk', ':caet-runtime:assembleDebug')
                 pluginApks {
                     pluginApk1 {
-                        businessName = 'plugin-one'//businessName相同的插件，context获取的Dir是相同的。businessName留空，表示和宿主相同业务，直接使用宿主的Dir。
-                        partKey = 'plugin-one'
+                        businessName = '应急管理服务'//businessName相同的插件，context获取的Dir是相同的。businessName留空，表示和宿主相同业务，直接使用宿主的Dir。
+                        partKey = 'b7j2NVzj'
                         buildTask = 'assemblePluginDebug'
                         apkName = 'plugin-app-plugin-debug.apk'
                         apkPath = 'plugin-app/build/outputs/apk/plugin/debug/plugin-app-plugin-debug.apk'
@@ -130,11 +131,11 @@ shadow {
                         // 引入的businessName。当businessName为空时，Shadow就认为这个插件跟宿主是同一个业务，这个插件直接使用宿主的data目录。
                         // 当businessName设置了值时，Shadow就会在宿主的data目录中以businessName为参数新建一个子目录作为插件的data根目录使用。
                         // 这样相同businessName的插件就会使用同一个data目录了，不同businessName的插件的data目录就相当于是隔离的了
-                        businessName = 'plugin-one'
+                        businessName = '应急管理服务'
                         //是插件apk的别名。因为插件apk的文件名是有可能因为带了版本号或者什么参数而变化，所以有这样一个partKey作为一个插件apk的不变的别名。
                         // partKey可以用于在表示一个插件依赖另外一个插件时使用。Shadow内部在实现区分多插件逻辑时也会用partKey作为该apk的Key。
                         // 在Loader等接口上的partKey参数指的也是这个partKey
-                        partKey = 'plugin-one'
+                        partKey = 'b7j2NVzj'
                         buildTask = 'assemblePluginRelease'
                         apkName = 'plugin-app-plugin-release.apk'
                         apkPath = 'plugin-app/build/outputs/apk/plugin/release/plugin-app-plugin-release.apk'
