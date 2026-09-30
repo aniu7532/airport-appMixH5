@@ -18,8 +18,13 @@ import androidx.annotation.Nullable;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
 
 public class LoadAssetsWebActivity extends BaseActivity{
+
+    // 登录签名共享密钥，只在本地算签名用，不能放进请求
+    private static final String SECRET_KEY = "a7Fk29LmQx8Zs3VtRn6Yw1BdC4EjHpGu";
 
     private WebView webw;
 
@@ -82,6 +87,17 @@ public class LoadAssetsWebActivity extends BaseActivity{
                 paramsBuilder.append("token=").append(URLEncoder.encode(token, "UTF-8"));
             }
 
+            // 拼接timestamp和sign参数（登录签名，H5侧用它调登录接口换token）
+            // 签名用的username就是code参数的值，即intent里的code
+            String signUsername = (code != null) ? code : "";
+            String timestamp = String.valueOf(System.currentTimeMillis() / 1000);
+            String sign = buildSign(signUsername, timestamp);
+            if (paramsBuilder.length() > 0) {
+                paramsBuilder.append("&");
+            }
+            paramsBuilder.append("timestamp=").append(timestamp);
+            paramsBuilder.append("&sign=").append(URLEncoder.encode(sign, "UTF-8"));
+
             // 最终拼接URL：如果有参数则加?，再拼接参数
             if (paramsBuilder.length() > 0) {
                 loadUrl = baseUrl + "?" + paramsBuilder.toString();
@@ -95,6 +111,27 @@ public class LoadAssetsWebActivity extends BaseActivity{
         } finally {
             // 加载最终拼接好的URL
             webw.loadUrl(loadUrl);
+        }
+    }
+
+    /**
+     * 计算登录签名：HMAC-SHA256(secretKey, username + "&" + timestamp)，小写hex，再encodeURIComponent
+     */
+    private static String buildSign(String username, String timestamp) {
+        try {
+            String content = username + "&" + timestamp;
+            Mac mac = Mac.getInstance("HmacSHA256");
+            mac.init(new SecretKeySpec(SECRET_KEY.getBytes("UTF-8"), "HmacSHA256"));
+            byte[] bytes = mac.doFinal(content.getBytes("UTF-8"));
+            StringBuilder hex = new StringBuilder();
+            for (byte b : bytes) {
+                hex.append(String.format("%02x", b));
+            }
+            // encodeURIComponent：URLSearchParams 风格编码，空格转%20
+            return URLEncoder.encode(hex.toString(), "UTF-8")
+                    .replace("+", "%20");
+        } catch (Exception e) {
+            return "";
         }
     }
 

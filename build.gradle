@@ -36,6 +36,7 @@ allprojects {
                 password = '\u0067hp_s3VOOZnLf1bTyvHWblPfaessrVYyEU4JdNbs'
             }
         }
+        maven { url 'https://jitpack.io' }
         mavenLocal()
     }
 }
