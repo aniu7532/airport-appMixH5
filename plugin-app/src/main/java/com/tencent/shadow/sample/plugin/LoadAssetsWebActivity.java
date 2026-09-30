@@ -35,7 +35,7 @@ public class LoadAssetsWebActivity extends BaseActivity{
         initWebView();
 
         // 基础URL
-        String baseUrl = "http://10.18.6.230:27070/app/";
+        String baseUrl = "http://60.16.5.211:27070/app/";
         // 初始化loadUrl，确保在finally中能访问到
         String loadUrl = baseUrl;
 
